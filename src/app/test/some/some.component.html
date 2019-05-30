@@ -1,0 +1,13 @@
+<p [appBold]="'900'">Some text</p>
+
+<input type="text" placeholder="name" #name>
+<input type="text" placeholder="age" #age>
+<button (click)="onAddUser(name.value, age.value)">Add user</button>
+<button (click)="onToggle()">Toggle</button>
+<ul>
+  <li *ngFor="let user of arrayUsers">
+    <p [ngClass]="{textClass: toggleClass}" [ngStyle]="{'font-weight': textWeight}">
+      user name: {{ user.name }}, user age: {{ user.age }}
+    </p>
+  </li>
+</ul>
